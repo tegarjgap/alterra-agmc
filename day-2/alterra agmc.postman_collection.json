@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "df80bf71-b24d-46d6-9f21-4836901f0a32",
+		"name": "alterra agmc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23303706"
+	},
+	"item": [
+		{
+			"name": "day 2",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "new user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "tobirama",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "tobirama@mail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "encodetobirama",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_users}}users",
+									"host": [
+										"{{base_url_users}}users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user by id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "yuki kato baru",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "yukiemailbaru 2",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "passwordbaru 2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_users}}users/:id",
+									"host": [
+										"{{base_url_users}}users"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_users}}users/:id",
+									"host": [
+										"{{base_url_users}}users"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_users}}users",
+									"host": [
+										"{{base_url_users}}users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_users}}users/:id",
+									"host": [
+										"{{base_url_users}}users"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "books",
+					"item": [
+						{
+							"name": "book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Harri Potter 2\",\n    \"author\": \"JK Rowling\",\n    \"amount_page\": 800\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_books}}books",
+									"host": [
+										"{{base_url_books}}books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "books",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "book by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_books}}books/:id",
+									"host": [
+										"{{base_url_books}}books"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "book by id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Harry pOTTER Chamber\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_books}}books/:id",
+									"host": [
+										"{{base_url_books}}books"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "book by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_books}}books/:id",
+									"host": [
+										"{{base_url_books}}books"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
