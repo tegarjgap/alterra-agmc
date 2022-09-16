@@ -1,0 +1,432 @@
+{
+	"info": {
+		"_postman_id": "a1774f2e-7f4f-4b38-8389-aa664546a121",
+		"name": "alterra agmc day 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23303706"
+	},
+	"item": [
+		{
+			"name": "day 3",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "new user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "hermione granger",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "hermine@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "herminone",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_users}}users",
+									"host": [
+										"{{base_url_users}}users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "malpie 3",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "malpie@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "malpie@password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_users}}auth/users/:id",
+									"host": [
+										"{{base_url_users}}auth"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_users}}auth/users/:id",
+									"host": [
+										"{{base_url_users}}auth"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_users}}auth/users",
+									"host": [
+										"{{base_url_users}}auth"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_users}}auth/users/:id",
+									"host": [
+										"{{base_url_users}}auth"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "auth",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "hashmap",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "encode",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_users}}login",
+									"host": [
+										"{{base_url_users}}login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "books",
+					"item": [
+						{
+							"name": "book",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_book}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Harri Potter 10\",\n    \"author\": \"JK Rowling lagi\",\n    \"amount_page\": 400\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_users}}auth/books",
+									"host": [
+										"{{base_url_users}}auth"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "books",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_users}}books",
+									"host": [
+										"{{base_url_users}}books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "book by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_users}}books/:id",
+									"host": [
+										"{{base_url_users}}books"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "book by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_book}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Harry pOTTER Chamber\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_users}}auth/books/:id",
+									"host": [
+										"{{base_url_users}}auth"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "book by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_book}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_users}}auth/books/:id",
+									"host": [
+										"{{base_url_users}}auth"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "auth",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "root",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "huft",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_users}}login/book",
+									"host": [
+										"{{base_url_users}}login"
+									],
+									"path": [
+										"book"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
